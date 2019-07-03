@@ -1,9 +1,9 @@
-package com.scoket.io.BreakpointUpLoad;
+/*package com.scoket.io.BreakpointUpLoad;
 
-/**
+*//**
  * @author riemann
  * @date 2019/04/24 23:26
- */
+ *//*
 public class TestMethod {
     public TestMethod()
     {
@@ -26,4 +26,4 @@ public class TestMethod {
     {
         new TestMethod();
     }
-}
+}*/

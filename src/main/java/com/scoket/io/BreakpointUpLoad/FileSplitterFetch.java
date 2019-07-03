@@ -1,14 +1,14 @@
-package com.scoket.io.BreakpointUpLoad;
+/*package com.scoket.io.BreakpointUpLoad;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
+*//**
  * @author riemann
  * @date 2019/04/24 23:24
- */
+ *//*
 public class FileSplitterFetch extends Thread {
 
     String sURL; // File URL
@@ -19,7 +19,7 @@ public class FileSplitterFetch extends Thread {
     boolean bStop = false; // Stop identical
     FileAccessI fileAccessI = null; // File Access interface
 
-    /**
+    *//**
      *
      * @param sURL 文件资源URL
      * @param sName 要保存的文件名(完整路径,绝对路径)
@@ -27,7 +27,7 @@ public class FileSplitterFetch extends Thread {
      * @param nEnd 文件指针结束位置
      * @param id 线程ID
      * @throws IOException
-     */
+     *//*
     public FileSplitterFetch(String sURL, String sName, long nStart, long nEnd,
                              int id) throws IOException, IOException {
         this.sURL = sURL;
@@ -99,4 +99,4 @@ public class FileSplitterFetch extends Thread {
         bStop = true;
     }
 
-}
+}*/

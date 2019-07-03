@@ -1,4 +1,4 @@
-package com.test.objectMapper;
+/*package com.test.objectMapper;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -13,10 +13,10 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-/**
+*//**
  * @author riemann
  * @date 2019/05/27 22:55
- */
+ *//*
 public class ObjectMapperTest {
 
     public static ObjectMapper mapper = new ObjectMapper();
@@ -97,4 +97,4 @@ public class ObjectMapperTest {
         String jsonStr = mapper.writeValueAsString(riemannUser);
         System.out.println("对象转为字符串：" + jsonStr);
     }
-}
+}*/

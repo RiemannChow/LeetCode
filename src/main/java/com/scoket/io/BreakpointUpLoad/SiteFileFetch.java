@@ -1,39 +1,39 @@
-package com.scoket.io.BreakpointUpLoad;
+/*package com.scoket.io.BreakpointUpLoad;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
+*//**
  * @author riemann
  * @date 2019/04/24 23:23
- */
+ *//*
 public class SiteFileFetch extends Thread {
 
-    /** 文件信息 Bean */
+    *//** 文件信息 Bean *//*
     SiteInfoBean siteInfoBean = null;
 
-    /** 文件指针开始位置数组 */
+    *//** 文件指针开始位置数组 *//*
     long[] nStartPos;
 
-    /** 文件指针结束位置数组 */
+    *//** 文件指针结束位置数组 *//*
     long[] nEndPos;
 
-    /** 子下载线程数组 */
+    *//** 子下载线程数组 *//*
     FileSplitterFetch[] fileSplitterFetch;
 
-    /** 文件长度 (字节byte) */
+    *//** 文件长度 (字节byte) *//*
     long nFileLength;
 
-    /** 是否第一次取文件 */
+    *//** 是否第一次取文件 *//*
     boolean bFirst = true;
 
-    /** 停止标志 */
+    *//** 停止标志 *//*
     boolean bStop = false;
 
-    /**
+    *//**
      * 临时文件用于记录文件下载信息(下载线程个数,每个下载线程的当前文件开始指针,文件结束指针)
-     */
+     *//*
     private File tmpFile;
 
     // 输出到文件的输出流
@@ -69,11 +69,11 @@ public class SiteFileFetch extends Thread {
 
 
 
-    /**
+    *//**
      * 文件名重复则重新命名
      *
      * @param bean
-     */
+     *//*
     private void adjustFileNameForDuplicate(SiteInfoBean bean)
     {
         if (bean != null && bean.getSFileName() != null
@@ -112,13 +112,13 @@ public class SiteFileFetch extends Thread {
         }
     }
 
-    /**
+    *//**
      * (1) 获得文件长度 <br>
      * (2) 分割文件<br>
      * (3) 创建文件下载线程 FileSplitterFetch<br>
      * (4) 启动文件下载线程  FileSplitterFetch 线程<br>
      * (5) 等待子线程返回
-     */
+     *//*
     public void run()
     {
         try
@@ -215,11 +215,11 @@ public class SiteFileFetch extends Thread {
         }
     }
 
-    /**
+    *//**
      * 获得文件长度
      *
      * @return
-     */
+     *//*
     public long getFileSize()
     {
         int nFileLength = -1;
@@ -272,9 +272,9 @@ public class SiteFileFetch extends Thread {
         return nFileLength;
     }
 
-    /**
+    *//**
      * 收集下载进度
-     */
+     *//*
     private void gatherLoadProgress()
     {
         // 剩余的字节数
@@ -303,9 +303,9 @@ public class SiteFileFetch extends Thread {
         System.out.println("当前下载进度 " + percent + "%");
     }
 
-    /**
+    *//**
      * 保存下载信息（文件指针位置）
-     */
+     *//*
     private void write_nPos()
     {
         try
@@ -331,9 +331,9 @@ public class SiteFileFetch extends Thread {
         }
     }
 
-    /**
+    *//**
      * 读取之前下载保存下来的文件指针位置
-     */
+     *//*
     private void read_nPos()
     {
         try
@@ -375,9 +375,9 @@ public class SiteFileFetch extends Thread {
         return isLoading;
     }
 
-    /**
+    *//**
      * 停止文件下载
-     */
+     *//*
     public void siteStop()
     {
         bStop = true;
@@ -398,4 +398,4 @@ public class SiteFileFetch extends Thread {
         void onStopLoad();
     }
 
-}
+}*/

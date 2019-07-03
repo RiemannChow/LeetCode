@@ -16,7 +16,7 @@ public class RiemannUser implements Serializable {
 
     private String message;
 
-    private Date sendDate;
+    private String sendDate;
 
     private String nodeName;
 
@@ -26,7 +26,7 @@ public class RiemannUser implements Serializable {
         super();
     }
 
-    public RiemannUser(int id, String message, Date sendDate) {
+    public RiemannUser(int id, String message, String sendDate) {
         super();
         this.id = id;
         this.message = message;
@@ -53,11 +53,11 @@ public class RiemannUser implements Serializable {
         this.message = message;
     }
 
-    public Date getSendDate() {
+    public String getSendDate() {
         return sendDate;
     }
 
-    public void setSendDate(Date sendDate) {
+    public void setSendDate(String sendDate) {
         this.sendDate = sendDate;
     }
 
