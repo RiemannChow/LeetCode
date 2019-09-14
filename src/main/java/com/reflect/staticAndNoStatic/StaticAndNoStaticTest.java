@@ -10,6 +10,7 @@ import java.lang.reflect.Method;
 public class StaticAndNoStaticTest {
 
     public static void main(String[] args) throws Exception {
+
         System.out.println("==========反射调用静态方法==========");
         // 反射调用静态方法,不需要获取类对象
         // 获取字节码对象
@@ -21,7 +22,6 @@ public class StaticAndNoStaticTest {
         staticMethod.invoke(null, (Object) s);
 
         System.out.println("==========反射调用非静态方法==========");
-
         // 反射调用非静态方法，需要获取类对象
         // 获取字节码对象
         Class<StaticAndNoStaticTest> clazzNoStatic = (Class<StaticAndNoStaticTest>) Class.forName("com.reflect.staticAndNoStatic.StaticAndNoStaticTest");
@@ -42,6 +42,13 @@ public class StaticAndNoStaticTest {
         staticPrivateMethod.setAccessible(true);
         staticPrivateMethod.invoke(instance2, "test static and private");
 
+        System.out.println("==========反射调用私有非静态方法==========");
+        Class<StaticAndNoStaticTest> clazzNoStaticPrivate = (Class<StaticAndNoStaticTest>) Class.forName("com.reflect.staticAndNoStatic.StaticAndNoStaticTest");
+        Constructor<StaticAndNoStaticTest> constructor3 = clazzStaticPrivate.getConstructor();
+        StaticAndNoStaticTest instance3 = constructor3.newInstance();
+        Method noStaticPrivateMethod = clazzNoStaticPrivate.getDeclaredMethod("noStaticPrivateMethod", new Class[]{String.class, Integer.class});
+        noStaticPrivateMethod.setAccessible(true);
+        noStaticPrivateMethod.invoke(instance3, "test no static and private ", 20190914);
     }
 
     public static void staticMethod(String[] args) {
@@ -57,11 +64,11 @@ public class StaticAndNoStaticTest {
     }
 
     private static void staticPrivateMethod(String s) {
-        System.out.println("this is a private method and the parameters is: " + s);
+        System.out.println("this is a private static method and the parameters is: " + s);
     }
 
-    private void noStaticPrivateMethod(String s) {
-        System.out.println("this is a private method and the parameters is: " + s);
+    private void noStaticPrivateMethod(String s, Integer i) {
+        System.out.println("this is a private no static method and the parameters is: " + s + i);
     }
 
 }
