@@ -39,14 +39,16 @@ public class StaticAndNoStaticTest {
         Constructor<StaticAndNoStaticTest> constructor2 = clazzStaticPrivate.getConstructor();
         StaticAndNoStaticTest instance2 = constructor2.newInstance();
         Method staticPrivateMethod = clazzStaticPrivate.getDeclaredMethod("staticPrivateMethod", new Class[]{String.class});
+        // 强制进入
         staticPrivateMethod.setAccessible(true);
         staticPrivateMethod.invoke(instance2, "test static and private");
 
         System.out.println("==========反射调用私有非静态方法==========");
         Class<StaticAndNoStaticTest> clazzNoStaticPrivate = (Class<StaticAndNoStaticTest>) Class.forName("com.reflect.staticAndNoStatic.StaticAndNoStaticTest");
-        Constructor<StaticAndNoStaticTest> constructor3 = clazzStaticPrivate.getConstructor();
+        Constructor<StaticAndNoStaticTest> constructor3 = clazzNoStaticPrivate.getConstructor();
         StaticAndNoStaticTest instance3 = constructor3.newInstance();
         Method noStaticPrivateMethod = clazzNoStaticPrivate.getDeclaredMethod("noStaticPrivateMethod", new Class[]{String.class, Integer.class});
+        // 强制进入
         noStaticPrivateMethod.setAccessible(true);
         noStaticPrivateMethod.invoke(instance3, "test no static and private ", 20190914);
     }
