@@ -66,7 +66,7 @@ public class LeetCode2 {
 
     public static void main(String[] args) {
         int[] a = new int[]{2,4,3};
-        int[] b = new int[]{5,6,7};
+        int[] b = new int[]{5,6,4};
         ListNode aList = buildListNode(a);
         ListNode bList = buildListNode(b);
         ListNode listNode;
