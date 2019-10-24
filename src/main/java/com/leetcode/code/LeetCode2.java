@@ -35,4 +35,51 @@ public class LeetCode2 {
         }
         return head.next;
     }
+
+    public static ListNode buildListNode(int[] list) {
+        ListNode first = null, last = null, newNode;
+        for(int i = 0; i < list.length; i++) {
+            newNode = new ListNode(list[i]);
+            if(first == null) {
+                first = newNode;
+                last = newNode;
+            } else {
+                last.next = newNode;
+                last = newNode;
+            }
+        }
+        return first;
+    }
+
+    private static void commonPrintListNode(ListNode listNode) {
+        while(listNode!=null){
+            String str = listNode.val + "->";
+            if (listNode.next == null) {
+                str = str.substring(0, str.length() - 2);
+            }
+            System.out.print(str);
+            listNode = listNode.next;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] a = new int[]{2,4,3};
+        int[] b = new int[]{5,6,4};
+        ListNode aList = buildListNode(a);
+        ListNode bList = buildListNode(b);
+        ListNode listNode;
+
+        listNode = aList;
+        commonPrintListNode(listNode);
+
+        System.out.println();
+        listNode = bList;
+        commonPrintListNode(listNode);
+
+        System.out.println();
+        listNode = addTwoNumbers(aList, bList);
+        commonPrintListNode(listNode);
+
+    }
+
 }
