@@ -52,7 +52,7 @@ public class LeetCode2 {
     }
 
     private static void commonPrintListNode(ListNode listNode) {
-        while(listNode!=null){
+        while(listNode!=null) {
             String str = listNode.val + "->";
             if (listNode.next == null) {
                 str = str.substring(0, str.length() - 2);
@@ -64,7 +64,7 @@ public class LeetCode2 {
 
     public static void main(String[] args) {
         int[] a = new int[]{2,4,3};
-        int[] b = new int[]{5,6,4};
+        int[] b = new int[]{5,6,7};
         ListNode aList = buildListNode(a);
         ListNode bList = buildListNode(b);
         ListNode listNode;
