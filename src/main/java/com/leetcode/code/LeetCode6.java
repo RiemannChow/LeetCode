@@ -21,6 +21,7 @@ import java.util.List;
  *
  */
 public class LeetCode6 {
+    // 方法一
     public static String convert(String s, int numRows) {
         int length = s.length();
         if(length == 0 || length <= numRows || numRows == 1) {
@@ -52,6 +53,7 @@ public class LeetCode6 {
         return ans;
     }
 
+    // 方法二
     public static String convert2(String s, int numRows) {
         if (numRows < 2) {
             return s;
@@ -75,8 +77,30 @@ public class LeetCode6 {
         return result.toString();
     }
 
+    // 方法三
+    public String convert3(String s, int numRows) {
+        if (numRows == 1) {
+            return s;
+        }
+        int step = (numRows - 1) << 1;
+        int len = s.length();
+        char[] ans = new char[len];
+        char[] chars = s.toCharArray();
+        int index = -1;
+        for (int i = 0; i < numRows; i++) {
+            for (int j = i; j < len; j += step) {
+                ans[++index] = chars[j];
+                if (i != 0 && i != numRows - 1 && step - (i << 1) + j < len) {
+                    ans[++index] = chars[step - (i << 1) + j];
+                }
+            }
+        }
+        return new String(ans);
+    }
+
     public static void main(String[] args) {
-        System.out.println(convert("LEETCODEISHIRING", 4)); //472103 纳秒
-        System.out.println(convert2("LEETCODEISHIRING", 4)); // 666246 纳秒
+        System.out.println(convert("LEETCODEISHIRING", 4));
+        System.out.println(convert2("LEETCODEISHIRING", 4));
+        System.out.println(convert2("LEETCODEISHIRING", 4));
     }
 }
