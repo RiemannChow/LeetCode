@@ -1,4 +1,4 @@
-package com.algorithm.nineSortingAlgorithm;
+package com.algorithm.tenSortingAlgorithm;
 
 import java.util.Arrays;
 
