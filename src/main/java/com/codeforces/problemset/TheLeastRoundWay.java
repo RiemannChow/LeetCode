@@ -91,8 +91,8 @@ public class TheLeastRoundWay {
         System.out.print(trailingZeros + "\n" + out);
     }
 
-    public static int min(int left, int right){
-        if (left < right){
+    public static int min(int left, int right) {
+        if (left < right) {
             return left;
         }
         else{
@@ -101,7 +101,7 @@ public class TheLeastRoundWay {
     }
 
     static int factor(int num, int factorer) {
-        if (num == 0){
+        if (num == 0) {
             return num;
         }
         int val = 0;
