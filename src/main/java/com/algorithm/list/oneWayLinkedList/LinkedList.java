@@ -1,7 +1,10 @@
-package com.algorithm.list.OneWayLinkedList;
+package com.algorithm.list.oneWayLinkedList;
 
 import com.leetcode.source.ListNode;
 
+/**
+ * 单向链表
+ */
 public class LinkedList {
     /**
      * 统计链表节点的个数
