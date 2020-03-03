@@ -1,4 +1,4 @@
-package com.algorithm.list;
+package com.algorithm.list.circularLinkedList;
 
 import org.junit.Test;
 

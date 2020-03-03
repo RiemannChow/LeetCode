@@ -1,4 +1,4 @@
-package com.algorithm.list;
+package com.algorithm.list.circularLinkedList;
 
 import java.util.Collection;
 import java.util.concurrent.locks.ReentrantLock;

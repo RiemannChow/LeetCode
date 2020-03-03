@@ -1,4 +1,4 @@
-package com.algorithm.list;
+package com.algorithm.list.circularLinkedList;
 
 /**
  * 循环链表接口定义
