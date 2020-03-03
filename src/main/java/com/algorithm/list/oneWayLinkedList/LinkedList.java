@@ -6,6 +6,11 @@ import com.leetcode.source.ListNode;
  * 单向链表
  */
 public class LinkedList {
+
+    public ListNode head;
+
+    public ListNode cur;
+
     /**
      * 统计链表节点的个数
      * @param head 链表头结点
@@ -99,5 +104,36 @@ public class LinkedList {
             iterator = null;
             iterator = tempNode;
         }
+    }
+
+    /**
+     * 打印链表
+     * @param node
+     */
+    public void print(ListNode node) {
+        if (node == null) return;
+        ListNode cur = node;
+        while (cur != null) {
+            System.out.print(cur.data + "->");
+            cur = cur.getNext();
+        }
+        System.out.print("NULL");
+    }
+
+    /**
+     * 链表添加数据
+     * @param data
+     * @return
+     */
+    public ListNode add(int data) {
+        // 如果头结点为空,为头结点
+        if (head == null) {
+            head = new ListNode(data);
+            cur = head;
+        } else {
+            cur.next = new ListNode(data);
+            cur = cur.next;
+        }
+        return head;
     }
 }
