@@ -4,6 +4,8 @@ import com.algorithm.list.oneWayLinkedList.LinkedList;
 import com.leetcode.source.ListNode;
 
 /**
+ * LeetCode19-删除链表的倒数第N个节点
+ *
  * 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
  *
  * 示例：
