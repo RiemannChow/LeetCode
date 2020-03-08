@@ -1,8 +1,8 @@
 package com.leetcode.code;
 
-import java.util.Scanner;
-
 /**
+ * LeetCode66-加一
+ *
  * 输入: [1,2,3]
  * 输出: [1,2,4]
  * 解释: 输入数组表示数字 123。
