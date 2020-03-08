@@ -26,7 +26,7 @@ public class Interview_03 {
     // 方法2
     public int findRepeatNumber2(int[] nums) {
         for(int i = 0; i < nums.length; ++i) {
-            while(nums[i] != i){
+            while(nums[i] != i) {
                 if(nums[i] == nums[nums[i]])
                     return nums[i];
                 int temp = nums[i];
