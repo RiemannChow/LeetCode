@@ -47,13 +47,13 @@ public class LeetCode622 {
     }
 
     /** Get the front item from the queue. */
-    public int Front() {
+    public int front() {
         if (head == tail) return -1;
         return items[head];
     }
 
     /** Get the last item from the queue. */
-    public int Rear() {
+    public int rear() {
         if (isEmpty()) return -1;
         return items[(tail - 1 + capacity) % capacity];
     }
