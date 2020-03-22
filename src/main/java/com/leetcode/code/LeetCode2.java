@@ -19,8 +19,8 @@ public class LeetCode2 {
         ListNode p = l1, q = l2, cur = head;
         int carry = 0; // 进位
         while (p != null || q != null) {
-            int x = (p != null) ? p.val : 0;
-            int y = (q != null) ? q.val : 0;
+            int x = (p != null) ? p.data : 0;
+            int y = (q != null) ? q.data : 0;
             int sum = x + y + carry;
             carry = sum / 10;
             cur.next = new ListNode(sum % 10);
@@ -55,7 +55,7 @@ public class LeetCode2 {
 
     private static void commonPrintListNode(ListNode listNode) {
         while(listNode!=null) {
-            String str = listNode.val + "->";
+            String str = listNode.data + "->";
             if (listNode.next == null) {
                 str = str.substring(0, str.length() - 2);
             }
