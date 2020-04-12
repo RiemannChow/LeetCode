@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class LeetCode102 {
+    // 方法一
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> list = new ArrayList<>();
         List<Integer> tempList = new ArrayList<>();
@@ -60,4 +61,36 @@ public class LeetCode102 {
         }
         return list;
     }
+
+    // 方法二
+    public List<List<Integer>> resultList = null;
+    public List<List<Integer>> levelOrder2(TreeNode root) {
+        resultList = new ArrayList<List<Integer>>();
+        levelOrderHelper(root, 0);
+        return resultList;
+    }
+
+    private void levelOrderHelper(TreeNode node, int level) {
+        if (node == null) return;
+        if (resultList.size() <= level) {
+            resultList.add(new ArrayList<Integer>());
+        }
+        resultList.get(level).add(node.val);
+        levelOrderHelper(node.left, level + 1);
+        levelOrderHelper(node.right, level + 1);
+    }
+
+    // 方法三（这个方法不是题目的返回类型，这里提供多一条思路）
+    public void levelOrder3(TreeNode root) {
+        if (root == null) return;
+        LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode curNode = queue.poll();
+            System.out.print(curNode.val + "");
+            if (curNode.left != null) queue.add(curNode.left);
+            if (curNode.right != null) queue.add(curNode.right);
+        }
+    }
+
 }
