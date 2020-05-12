@@ -1,8 +1,36 @@
 package com.algorithm.tenSortingAlgorithm;
 
-import java.util.Arrays;
+import java.util.Random;
 
 public class BubbleSort {
+
+    public static void main(String[] args) {
+        int[] arr = constructDataArray(1000);
+        System.out.println("===============排序前===============");
+        printArrayData(arr);
+        long start = System.currentTimeMillis();
+        bubbleSort6(arr, 1000);
+        System.out.println("===============排序后===============");
+        printArrayData(arr);
+        System.out.println("排序后耗时：" + (System.currentTimeMillis() - start) + "ms");
+    }
+
+    private static void printArrayData(int[] arr) {
+        for (int a : arr) {
+            System.out.print(a + " ");
+        }
+        System.out.println();
+    }
+
+    private static int[] constructDataArray(int len) {
+        int[] arr = new int[len];
+        Random random = new Random();
+        for (int i = 0; i < len; i++) {
+            arr[i] = random.nextInt(len);
+        }
+        return arr;
+    }
+
     public static int[] bubbleSort(int[] arr, int len) {
         for (int i = 0; i < len; i++) { //确定排序趟数
             for (int j = i + 1; j < len; j++) { //确定比较次数
@@ -132,9 +160,21 @@ public class BubbleSort {
         }
     }
 
-    public static void main(String[] args) {
-        int[] arr = {1,28,3,21,11,7,6,18};
-        bubbleSort4(arr, arr.length);
-        System.out.println(Arrays.toString(arr));
+    // 优化第五版 (引入标志位，只循环一次)
+    public static void bubbleSort6(int[] arr, int len) {
+        boolean flag = true;
+        while (flag) {
+            flag = false;
+            for (int i = 0; i < len - 1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    int temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                    flag = true;
+                }
+            }
+            len--;
+        }
     }
+
 }
