@@ -244,7 +244,7 @@ public class AVLTree<T extends Comparable<T>> {
                     }
                 }
             } else { // temp == 0
-                System.err.println("Add failed, it is not allowed to add the same node!");
+                System.out.println("Add failed, it is not allowed to add the same node!");
             }
         }
         tree.height = max(height(tree.left), height(tree.right)) + 1;
