@@ -82,7 +82,7 @@ public class LinkedList {
         } else {
             ListNode prev = head;
             int count = 1;
-            while (count < position) {
+            while (count < position - 1) {
                 prev = prev.getNext();
                 count++;
             }
@@ -135,5 +135,17 @@ public class LinkedList {
             cur = cur.next;
         }
         return head;
+    }
+
+    public static void main(String[] args) {
+        LinkedList linkedList = new LinkedList();
+        linkedList.add(3);
+        linkedList.add(28);
+        linkedList.add(2);
+        linkedList.add(21);
+        linkedList.print(linkedList.head);
+        linkedList.deleteNodeFromLinkedList(linkedList.head, 2);
+        System.out.println();
+        linkedList.print(linkedList.head);
     }
 }
